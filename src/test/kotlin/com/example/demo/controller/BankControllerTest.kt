@@ -26,6 +26,20 @@ internal class BankControllerTest {
                 jsonPath("$[1].accountNumber") { value("12231") }
             }
     }
+    @Test
+    fun `should return a bank with account number`() {
+        //given
+        val accountNumber = "12231"
+        // when/then
+        mockMvc.get("/api/banks/$accountNumber")
+            .andDo { print() }
+            .andExpect {
+                status { isOk() }
+                content { contentType(MediaType.APPLICATION_JSON) }
+                jsonPath("$.trust") { value("12.0") }
+                jsonPath("$.transactionFee") { value("22") }
+            }
+    }
 
 
 }

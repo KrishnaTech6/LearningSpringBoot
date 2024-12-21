@@ -10,4 +10,7 @@ import org.springframework.stereotype.Service
  * is typically used for business logic or service-related functionality.*/
 class BankService(private val dataSource: BankDataSource) {
     fun getBanks(): Collection<Bank> = dataSource.retrieveBanks()
+    fun getBank(accountNumber: String): Bank {
+        return dataSource.retrieveBank(accountNumber)
+    }
 }
