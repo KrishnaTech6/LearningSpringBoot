@@ -1,10 +1,8 @@
 package com.example.demo.service
 
 import com.example.demo.datasource.BankDataSource
-import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class BankServiceTest{
